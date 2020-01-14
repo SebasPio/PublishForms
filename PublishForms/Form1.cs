@@ -287,7 +287,11 @@ namespace PublishForms
                 {
                     diagramacion = SelectedFile();
                 }
-                string salida = "";
+                string salida = txtFolder.Text;
+                if (salida == "")
+                {
+                    throw new Exception("Elija una ruta de salida");
+                }
                 if (diagramacion == "")
                 {
                     throw new Exception("Elija un archivo de Modelo de Datos");
@@ -448,17 +452,6 @@ namespace PublishForms
             
             listBoxIds.Items.Insert(0,e.Data);
         }
-    }
-
-    class ControlesAEliminar
-    {
-        public List<PorConcepto> ListaConceptos { get; set; }
-    }
-
-    class PorConcepto
-    {
-        public string Concepto { get; set; }
-        public List<string> Controles { get; set; }
     }
 }
 #endregion CambioId

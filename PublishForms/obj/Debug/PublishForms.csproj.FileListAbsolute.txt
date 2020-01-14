@@ -34,3 +34,18 @@ C:\SAT\Proyectos\PublishForms\PublishForms\obj\Debug\PublishForms.application
 C:\SAT\Proyectos\PublishForms\PublishForms\obj\Debug\PublishForms.csproj.CopyComplete
 C:\SAT\Proyectos\PublishForms\PublishForms\obj\Debug\PublishForms.exe
 C:\SAT\Proyectos\PublishForms\PublishForms\obj\Debug\PublishForms.pdb
+C:\SAT\Unificador Provisionales\PublishForms\obj\Debug\PublishForms.Form1.resources
+C:\SAT\Unificador Provisionales\PublishForms\obj\Debug\PublishForms.Properties.Resources.resources
+C:\SAT\Unificador Provisionales\PublishForms\obj\Debug\PublishForms.csproj.GenerateResource.cache
+C:\SAT\Unificador Provisionales\PublishForms\bin\Debug\PublishForms.exe.config
+C:\SAT\Unificador Provisionales\PublishForms\bin\Debug\PublishForms.exe.manifest
+C:\SAT\Unificador Provisionales\PublishForms\bin\Debug\PublishForms.application
+C:\SAT\Unificador Provisionales\PublishForms\bin\Debug\PublishForms.exe
+C:\SAT\Unificador Provisionales\PublishForms\bin\Debug\PublishForms.pdb
+C:\SAT\Unificador Provisionales\PublishForms\bin\Debug\Newtonsoft.Json.dll
+C:\SAT\Unificador Provisionales\PublishForms\bin\Debug\Newtonsoft.Json.xml
+C:\SAT\Unificador Provisionales\PublishForms\obj\Debug\PublishForms.exe.manifest
+C:\SAT\Unificador Provisionales\PublishForms\obj\Debug\PublishForms.application
+C:\SAT\Unificador Provisionales\PublishForms\obj\Debug\PublishForms.csproj.CopyComplete
+C:\SAT\Unificador Provisionales\PublishForms\obj\Debug\PublishForms.exe
+C:\SAT\Unificador Provisionales\PublishForms\obj\Debug\PublishForms.pdb

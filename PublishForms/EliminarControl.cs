@@ -2,35 +2,30 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PublishForms
 {
     class EliminarControl
     {
-
-        public string DeletedControls(object sender, EventArgs e, string txtRura, string txtRutaSalida, string[] campos)
+        public string DeletedControls(object sender, EventArgs e, string txtRuta, string txtRutaSalida, string[] campos)
         {
             string salida = "";
             try
-            {          
-                using (StreamReader r = new StreamReader(txtRura))
+            {
+                using (StreamReader r = new StreamReader(txtRuta))
                 {
                     var json = r.ReadToEnd();
 
-                    //var resultado = new Inicial[] { };
                     foreach (var c in campos)
                     {
-                        var objJson = JsonConvert.DeserializeObject<Inicial[]>(json);
+                        Objeto.Inicial[] objJson = JsonConvert.DeserializeObject<Objeto.Inicial[]>(json);
                         var resultado = RecorrerJson(objJson, c);
                         salida = JsonConvert.SerializeObject(resultado, Formatting.Indented);
                         json = salida;
                     }
                 }
 
-                using (StreamWriter w = new StreamWriter(txtRutaSalida))
+                using (StreamWriter w = new StreamWriter(txtRuta))
                 {
                     w.Write(salida);
                 }
@@ -43,7 +38,7 @@ namespace PublishForms
             }
         }
 
-        private Inicial[] RecorrerJson(Inicial[] obj, string campo)
+        private Objeto.Inicial[] RecorrerJson(Objeto.Inicial[] obj, string campo)
         {
             bool bandera = false;
             for (int i = 0; i < obj.Length; i++)
@@ -57,12 +52,12 @@ namespace PublishForms
             if (!bandera)
             {
                 Console.Write("No se encontro: " + campo);
-                throw new Exception("Error en la eliminación de controles");
+                throw new Exception("No se encontro: " + campo);
             }
             return obj;
         }
 
-        private bool ExisteClave(Controles controles, string campo)
+        private bool ExisteClave(Objeto.Controles controles, string campo)
         {
             bool bandera = false;
 
@@ -84,9 +79,9 @@ namespace PublishForms
             return bandera;
         }
 
-        private Control[] LimpiarCampo(Controles controles, string campo)
+        private Objeto.Control[] LimpiarCampo(Objeto.Controles controles, string campo)
         {
-            var listControl = new List<Control>();
+            var listControl = new List<Objeto.Control>();
             for (int i = 0; i < controles.control.Length; i++)
             {
                 if (controles.control[i].idPropiedad != campo)
@@ -96,44 +91,5 @@ namespace PublishForms
             }
             return listControl.ToArray();
         }
-    }
-
-    [Serializable]
-    public class Atributo
-    {
-        public string nombre { get; set; }
-        public string valor { get; set; }
-    }
-
-    [Serializable]
-    public class Atributos
-    {
-        public Atributo[] atributo { get; set; }
-    }
-
-    [Serializable]
-    public class Inicial
-    {
-        public Control control { get; set; }
-    }
-
-    [Serializable]
-    public class Controles
-    {
-        public Control[] control { get; set; }
-    }
-
-    [Serializable]
-    public class Control
-    {
-        public Control() { }
-        public string id { get; set; }
-        public string tipoControl { get; set; }
-        public string idEntidadPropiedad { get; set; }
-        public string idPropiedad { get; set; }
-        public string idTipoFlujo { get; set; }
-        public string orden { get; set; }
-        public Atributos atributos { get; set; }
-        public Controles controles { get; set; }
     }
 }
